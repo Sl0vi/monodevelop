@@ -314,7 +314,8 @@ namespace MonoDevelop.Ide.CodeCompletion
 			Opacity = 0;
 			base.RepositionWindow(newCaret);
 			GLib.Timeout.Add (50, delegate {
-				Opacity = 1;
+				if (Parent.Visible)
+					Opacity = 1;
 				return false;
 			});
 		}

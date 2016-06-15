@@ -903,8 +903,7 @@ namespace MonoDevelop.Ide.CodeCompletion
 			if (data != currentData)
 				HideDeclarationView ();
 
-			//declarationViewTimer = GLib.Timeout.Add (150, DelayedTooltipShow);
-			DelayedTooltipShowAsync (); // Fix async tooltip bug
+			declarationViewTimer = GLib.Timeout.Add (150, DelayedTooltipShow);
 		}
 		
 		void HideDeclarationView ()
